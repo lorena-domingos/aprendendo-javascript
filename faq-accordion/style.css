@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.faq-container {
+    padding: 10px;
+}
+
+.faq-item {
+    cursor: pointer;
+}
+
+.faq-content {
+    margin-top: 5px;
+    display: none;
+}
+
+.faq-content.active {
+    display: block;
+}
+
+/* Test */
+
+.test {
+    display: flex;
+    gap: 10px;
+}
+
+.test > p {
+    cursor: pointer;
+}
+
