@@ -1,6 +1,6 @@
 const faqItems = document.querySelectorAll(".faq-item");
 const faqContents = document.querySelectorAll('.faq-content');
-let changeIcon = document.querySelector('#changeIcon');
+let changeIcons = document.querySelectorAll('.changeIcon');
 
 faqItems.forEach((item, index) => {
 
@@ -12,11 +12,13 @@ faqItems.forEach((item, index) => {
             content.classList.remove("active");
         });
 
+        changeIcons.forEach((icon) => {
+            icon.innerHTML = "😊";
+        })
+
         if (!isActive) {
             currentItem.classList.add("active");
-            changeIcon.innerHTML = "😎";
-        } else {
-            changeIcon.innerHTML = "😊";
-        }
+            changeIcons[index].innerHTML = "😎";
+        } 
     });
 });
