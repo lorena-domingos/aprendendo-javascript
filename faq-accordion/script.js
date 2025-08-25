@@ -10,12 +10,13 @@ faqItems.forEach((item, index) => {
 
         faqContents.forEach((content) => {
             content.classList.remove("active");
-            changeIcon.innerHTML = "😊";
         });
 
         if (!isActive) {
             currentItem.classList.add("active");
             changeIcon.innerHTML = "😎";
+        } else {
+            changeIcon.innerHTML = "😊";
         }
     });
 });
