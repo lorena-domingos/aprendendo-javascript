@@ -49,3 +49,91 @@ Here are the essential topics for you to master this for good:
 * All click-related logic goes **INSIDE** the **`addEventListener`**.
 * For accordions, the best pattern is: **first reset all (`.remove`), then activate one (`.add`)**.
 * For a polished animation, use **`max-height` + `transition`** in your CSS.
+
+---
+
+Of course, I can help with that\! You're totally on the right track—the `index` is the secret to getting the right icon. Your code is almost perfect\!
+
+The current problem is the same one we saw with the content: the line `let changeIcon = document.querySelector('#changeIcon');` only grabs the **very first icon** it finds on the page with that `id`.
+
+It's like having multiple questions but only one spot to display an emoji. No matter which question you click, the emoji will only change in that one single spot.
+
+To fix this, we need to make sure each item has its own icon and that our code knows which specific one to change.
+
+-----
+
+### Step 1: Tweak Your HTML (if needed)
+
+First, make sure that in your HTML, every accordion item has an element for the icon. Most importantly, use a **`class`** instead of an `id`, because an `id` must be unique on the page.
+
+**Incorrect (with id):**
+
+```html
+<div class="faq-item">
+  <h4>Question 1 <i id="changeIcon">😊</i></h4>
+  <div class="faq-content">...</div>
+</div>
+<div class="faq-item">
+  <h4>Question 2 <i id="changeIcon">😊</i></h4>
+  <div class="faq-content">...</div>
+</div>
+```
+
+**Correct (with class):**
+
+```html
+<div class="faq-item">
+  <h4>Question 1 <i class="change-icon">😊</i></h4>
+  <div class="faq-content">...</div>
+</div>
+<div class="faq-item">
+  <h4>Question 2 <i class="change-icon">😊</i></h4>
+  <div class="faq-content">...</div>
+</div>
+```
+
+-----
+
+### Step 2: The Corrected JS Logic
+
+Now, let's adjust the JavaScript to find and change the correct icon on every click, using our "reset everyone, then activate the specific one" logic.
+
+```javascript
+const faqItems = document.querySelectorAll(".faq-item");
+const faqContents = document.querySelectorAll('.faq-content');
+// Grab ALL the icons, not just one, and store them in a list
+const changeIcons = document.querySelectorAll('.change-icon');
+
+faqItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        const currentContent = faqContents[index];
+        const isActive = currentContent.classList.contains("active");
+
+        // --- GENERAL RESET ---
+        // Make sure all content panels are closed
+        faqContents.forEach((content) => {
+            content.classList.remove("active");
+        });
+        // Make sure all icons revert to the "closed" state
+        changeIcons.forEach((icon) => {
+            icon.innerHTML = "😊";
+        });
+
+        // --- SPECIFIC ACTION ---
+        // If the clicked item was NOT active, we're going to open it
+        if (!isActive) {
+            // Activate the correct content
+            currentContent.classList.add("active");
+            // And change ONLY THE CORRECT ICON using its index!
+            changeIcons[index].innerHTML = "😎";
+        }
+        // If it was already active, it will just close because of the RESET above. GG!
+    });
+});
+```
+
+### What We Changed:
+
+1.  **`querySelectorAll` for Icons:** We now use `const changeIcons = document.querySelectorAll('.change-icon');` to get a list of **all** your icon elements.
+2.  **Reset the Icons:** Before deciding whether to open or close, we loop through `changeIcons` and reset every icon back to the default "😊" emoji. This ensures that the icon of the previously open item goes back to normal.
+3.  **Change the Correct Icon:** When it's time to open a new item, we use `changeIcons[index].innerHTML = "😎";`. Since the `index` of the clicked item is the same as the `index` of its icon in our list, it changes exactly the emoji we want\!
