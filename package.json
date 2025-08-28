@@ -1,0 +1,23 @@
+{
+  "name": "aprendendo-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorena-domingos/aprendendo-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorena-domingos/aprendendo-javascript/issues"
+  },
+  "homepage": "https://github.com/lorena-domingos/aprendendo-javascript#readme",
+  "devDependencies": {
+    "jest": "^30.1.1"
+  }
+}
