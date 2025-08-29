@@ -17,4 +17,20 @@ function numeroAlfabeto(numero, quantidade) {
 
 }
 
-numeroAlfabeto(25, 2);
+/* Basicamente a função pega o primeiro valor e "corta" a partir dele,
+o segundo valor é a quantidade de carecteres
+
+que é basicamente o valor da letra + quantidade, pois sabemos que a
+função slice funciona como função(começo, fim)
+
+por exemplo função(2 - 1 (vai dar 1) == (posição do B), 1 (valor do começo) + 1) 
+
+
+
+representa a letra B e 2 a quantidade logo teremos a posição da primeira letra e em seguida o número de casas a partir dele.
+
+Logo ["B", "C"]
+
+*/
+
+numeroAlfabeto(2, 2);

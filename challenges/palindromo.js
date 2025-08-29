@@ -1,6 +1,6 @@
 function verificaPalindromo (texto) {
-    textoSeparado = texto.split("");
-    textoAoContrario = textoSeparado.toReversed();
+    let textoSeparado = texto.split("");
+    let textoAoContrario = textoSeparado.toReversed();
 
     if (textoSeparado.join("") === textoAoContrario.join("")) {
         return true;
