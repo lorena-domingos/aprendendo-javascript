@@ -23,3 +23,23 @@ test('5 é ímpar.', () => {
 test('4 é par.', () => {
     expect(exercises.evenOdd(4)).toBe("Even");
 });
+
+test('4 é maior que 2.', () => {
+    expect(exercises.maiorDeDois(4, 2)).toBe(true);
+});
+
+// test('2 é maior que 4.', () => {
+//     expect(exercises.maiorDeDois(2, 4)).toBe(true);
+// });
+
+test('João tem 18 ou mais?', () => {
+    expect(exercises.maiorDeIdade(18)).toBe(true);
+});
+
+test('Nota é 9', () => {
+    expect(exercises.maiorNota(9)).toBe("Aprovado");
+});
+
+test('O desconto de 15% de 200 é 170', () => {
+    expect(exercises.valorDescontado(200, 15)).toBe(170);
+});
