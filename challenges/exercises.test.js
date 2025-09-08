@@ -43,3 +43,23 @@ test('Nota é 9', () => {
 test('O desconto de 15% de 200 é 170', () => {
     expect(exercises.valorDescontado(200, 15)).toBe(170);
 });
+
+test('O dobro de 5 é 10.', () => {
+    expect(exercises.valorDobro(5)).toBe(10);
+});
+
+test('O triplo de -5 é -15.', () => {
+    expect(exercises.valorDobro(-5)).toBe(-15);
+});
+
+// test('É múltiplo de 5?', () => {
+//     expect(exercises.multiploCinco(16)).toBe(true);
+// });
+
+test('100 graus Celcius em Fahrenheit é 212 F.', () => {
+    expect(exercises.celciusParaFahrenheit(100)).toBe(212);
+});
+
+test('Sequência de 10', () => {
+    expect(exercises.sequenciaDez()).toEqual([1,2,3,4,5,6,7,8,9,10]);
+});

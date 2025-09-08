@@ -10,18 +10,22 @@ let divideFunction = (a, b) => { return a / b; };
 let evenOdd = (a) => { return a % 2 === 0 ? "Even" : "Odd"; };
 
 // Maior de dois
-let maiorDeDois = (a, b) => { return a > b === true ? true : false; }
+let maiorDeDois = (a, b) => a > b;
+
+// Reduntante retornar true ou false pois já retorna um valor desse tipo.
 
 // Maior de idade
 
-let maiorDeIdade = (a) => { return a >= 18 === true ? true : false; }
+let maiorDeIdade = (a) => a >= 18
+
+// Redundância também
 
 // Maior nota
 
 function maiorNota(a) {
     if (a >= 7) {
         return "Aprovado";
-    } else if (a <= 6 && a >= 5) {
+    } else if (a >= 5) { // Simplificação de lógica
         return "Recuperação";
     } else {
         return "Reprovado";
@@ -31,10 +35,39 @@ function maiorNota(a) {
 // Valor descontado
 
 function valorDescontado(valor, desconto) {
-    valorDesconto = (desconto / 100) * valor;
-    valorFinal = valor - valorDesconto;
+    let valorDesconto = (desconto / 100) * valor;
+    let valorFinal = valor - valorDesconto;
     return valorFinal;
 };
+
+// Dobro ou triplo
+
+let valorDobro = (a) => { return a > 0 ? a*2 : a*3; };
+
+// Múltiplo de 5
+
+let multiploCinco = (a) => { return a % 5 === 0 ? true : false; };
+
+// Conversor de temperatura
+
+function celciusParaFahrenheit(a) {
+    let valorFinal = (a * 9/5) + 32;
+    return valorFinal;
+};
+
+// sequencia de 10
+
+function sequenciaDez() {
+    const arr = [];
+    for (let i = 1; i <= 10; i++) {
+        arr.push(i);
+    }
+    return arr; // Uso de array para testar no Jest
+};
+
+sequenciaDez();
+
+// Level 1 Finalizado 💋
 
 module.exports = {
     sumFunction,
@@ -45,5 +78,9 @@ module.exports = {
     maiorDeDois,
     maiorDeIdade,
     maiorNota,
-    valorDescontado
+    valorDescontado,
+    valorDobro,
+    multiploCinco,
+    celciusParaFahrenheit,
+    sequenciaDez
 };
