@@ -1,4 +1,4 @@
-const exercises = require('./ex/exercises');
+const exercises = require('../exercises');
 
 test('A soma de 4 + 5 é 9', () => {
     expect(exercises.sumFunction(4, 5)).toBe(9);
