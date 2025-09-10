@@ -77,9 +77,97 @@ function fizzBuzz(value) {
 
 // 4/10
 
+// Nota Conceito
+
+function notaConceito(nota) {
+    if (nota >= 9) {
+        return "A";
+    } else if (nota >= 7) {
+        return "B";
+    } else if (nota >= 5) {
+        return "C";
+    } else {
+        return "D";
+    }
+};
+
+// Maior de três números
+
+function maiorValor(a, b, c) {
+    let listaValores = [];
+    listaValores.push(a, b, c)
+    return Math.max(...listaValores);
+};
+
+// Tabuada
+
+function tabuada(a) {
+    let receberTabuada = [];
+    let counter = 10;
+    for (let i = 1; i <= counter; i++) {
+        let calculo = a * i
+        let resultado = `${a} * ${i} = ${calculo}`;
+        receberTabuada.push(resultado);
+    }
+
+    console.log(receberTabuada);
+};
+
+// tabuada(2);
+
+// Ano bissexto
+
+function anoBissexto(ano) {
+    let anoString = String(ano);
+    let listaAno = Array.from(anoString);
+
+    let valor1 = (listaAno[2] + listaAno[3]);
+
+
+    if (listaAno[2] == "0" && listaAno[3] == "0") {
+        if (ano % 400 === 0) {
+            console.log("Ano Bissexto");
+        } else {
+            console.log("Não é um ano bissexto.");
+        }
+    } else {
+        if (valor1 % 4 === 0) {
+            console.log("Ano Bissexto");
+        }
+    }
+
+    // console.log(listaAno);
+};
+
+// anoBissexto(1900);
+
+
+// console.log(Math.sqrt(31).toFixed(1));
+
+function numeroPrimo(a) {
+    let divisor = Math.floor(Math.sqrt(a));
+    let primoMsg = "É primo";
+    for (divisor; 2 <= divisor; divisor--) {
+        resultado = a % divisor;
+        if (resultado === 0) {
+            primoMsg = "Não é primo";
+            break;
+        }
+    };
+
+    console.log(primoMsg);
+
+}
+
+numeroPrimo(10);
+
+// 9/10
+
 module.exports = {
     teste,
     tipoDeTriangulo,
     calculadoraComOperador,
-    receberNomeDoDia
+    receberNomeDoDia,
+    notaConceito,
+    maiorValor
 }

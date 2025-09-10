@@ -27,3 +27,12 @@ test('Realizando operações matemáticas.', () => {
 test('Receber dia da semana.', () => {
     expect(exercisesDois.receberNomeDoDia(2)).toBe("Terça");
 });
+
+test('Nota Conceitual', () => {
+    expect(exercisesDois.notaConceito(8)).toBe("B");
+});
+
+test('Maior valor de 3', () => {
+    expect(exercisesDois.maiorValor(2, 4, 9)).toBe(9);
+});
+
