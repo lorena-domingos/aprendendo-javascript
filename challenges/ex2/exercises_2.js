@@ -113,6 +113,10 @@ function tabuada(a) {
     console.log(receberTabuada);
 };
 
+/* if (!["+","-","*","/"].includes(operador)) {
+    return "Operação inválida";
+} */
+
 // tabuada(2);
 
 // Ano bissexto
@@ -141,6 +145,14 @@ function anoBissexto(ano) {
 
 // anoBissexto(1900);
 
+// Compliquei usando manipulação de String :C
+
+/* Seria o ideal: function anoBissexto(ano) {
+    if (ano % 400 === 0) return true;
+    if (ano % 100 === 0) return false;
+    return ano % 4 === 0;
+} */
+
 
 // console.log(Math.sqrt(31).toFixed(1));
 
@@ -155,13 +167,31 @@ function numeroPrimo(a) {
         }
     };
 
-    console.log(primoMsg);
+    return primoMsg;
 
 }
 
-numeroPrimo(10);
+// numeroPrimo(10);
 
 // 9/10
+
+// Fatorial
+
+function fatorial(valor) {
+    let acumulador = 1;
+    while (valor > 1) {
+        acumulador *= valor;
+        console.log(acumulador);
+        valor--;
+    }
+
+    return acumulador;
+};
+
+// fatorial(10);
+
+// Nível 2 finalizado
+
 
 module.exports = {
     teste,
@@ -169,5 +199,7 @@ module.exports = {
     calculadoraComOperador,
     receberNomeDoDia,
     notaConceito,
-    maiorValor
+    maiorValor,
+    fatorial,
+    numeroPrimo
 }

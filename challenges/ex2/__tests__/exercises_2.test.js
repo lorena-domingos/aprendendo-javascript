@@ -36,3 +36,10 @@ test('Maior valor de 3', () => {
     expect(exercisesDois.maiorValor(2, 4, 9)).toBe(9);
 });
 
+test("O fatorial de 5 é 120", () => {
+    expect(exercisesDois.fatorial(5)).toBe(120);
+});
+
+test("10 é número primo", () => {
+    expect(exercisesDois.numeroPrimo(10)).toBe("Não é primo");
+});
