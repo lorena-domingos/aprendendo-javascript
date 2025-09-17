@@ -38,8 +38,44 @@ function filtrarPares(intervalo=11) {
 
 // filtrarPares();
 
+// Maior ou menor
+
+function maiorOuMenor() {
+    const arr = [1, 2, 3, 4, 5, 6, 7];
+
+    const valorMaximo = Math.max(...arr);
+    const valorMinimo = Math.min(...arr);
+
+    const resultado = {maior: valorMaximo, menor: valorMinimo};
+
+    return resultado;
+};
+
+// maiorOuMenor();
+
+// Contar letras
+
+function contarLetras() {
+    const palavra = "banana";
+    let obj = {};
+
+    for (let i = 0; i < palavra.length; i++) {
+        if (!(palavra[i] in obj)) {
+            obj[palavra[i]] = 1;
+        } else {
+            obj[palavra[i]] += 1;
+        };
+    };
+
+    return obj;
+};
+
+// contarLetras();
+
 module.exports = {
     olaNome,
     mediaArray,
-    filtrarPares
-}
+    filtrarPares,
+    maiorOuMenor,
+    contarLetras
+};
