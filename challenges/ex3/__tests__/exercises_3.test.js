@@ -19,3 +19,11 @@ test('O maior valor é 7 e o menor é 1', () => {
 test('A contagem de letras na palavra banana é: { b: 1, a: 3, n: 2 }', () => {
     expect(exercisesThree.contarLetras()).toEqual({ b: 1, a: 3, n: 2 });
 });
+
+test('O array inverso é [5, 4, 3, 2, 1]', () => {
+    expect(exercisesThree.reverterArray()).toEqual([5, 4, 3, 2, 1]);
+});
+
+test('A soma do array dentro do ojeto é 15', () => {
+    expect(exercisesThree.retornarSoma()).toBe(15);
+});

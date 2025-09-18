@@ -72,10 +72,43 @@ function contarLetras() {
 
 // contarLetras();
 
+// Reverter array 
+
+function reverterArray() {
+    const arr = [1, 2, 3, 4, 5];
+    let arr2 = [];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        arr2.push(arr[i]);
+    };
+
+    return arr2;
+};
+
+// reverterArray();
+
+// Somar Array
+
+function retornarSoma() {
+    const obj = {valor: [1, 2, 3, 4, 5]};
+    let resultado = 0;
+
+    for (let i = obj.valor.length; i > 0; i--) {
+        resultado = obj.valor.reduce((ac, cv) => ac + cv, 0)
+    };
+
+    return resultado;
+
+};
+
+// retornarSoma();
+
 module.exports = {
     olaNome,
     mediaArray,
     filtrarPares,
     maiorOuMenor,
-    contarLetras
+    contarLetras,
+    reverterArray,
+    retornarSoma
 };
