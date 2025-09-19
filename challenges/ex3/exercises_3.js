@@ -103,6 +103,55 @@ function retornarSoma() {
 
 // retornarSoma();
 
+// Retornar array sem repetição
+
+function arrSemRepeticao() {
+    const arr = [1, 1, 1, 2, 4, 5, 5, 6];
+    let arr2 = [];
+
+    for (let i = 0; arr.length - 1 >= i; i++) {
+        if (!(arr2.includes(arr[i]))) {
+            arr2.push(arr[i]);
+        };
+    };
+
+    // const map1 = arr.map((x) => x === x) 
+
+    return arr2;
+};
+
+// arrSemRepeticao();
+
+// Produto acumulado
+
+function produtoAcumulado() {
+    const arr = [1, 2, 3, 4, 5, 6]; // Resultado deve ser 21
+    let arr2 = [];
+    let resultado = 0;
+
+    arr2 = arr;
+    for (let i = 0; i <= arr.length; i++) {
+        resultado = arr.reduce((ac, cv) => ac + cv, 0);
+    };
+
+    arr2[arr2.length - 1] = resultado;
+
+    return arr2;
+};
+
+// produtoAcumulado();
+
+// Letras maiúsculas
+
+function letraMaiuscula() {
+    const arrString = ['arroz', 'batata', 'pão', 'python', 'estrogénio'];
+    const map1 = arrString.map((x) => x.toUpperCase());
+    
+    return map1;
+};
+
+// letraMaiuscula();
+
 module.exports = {
     olaNome,
     mediaArray,
@@ -110,5 +159,8 @@ module.exports = {
     maiorOuMenor,
     contarLetras,
     reverterArray,
-    retornarSoma
+    retornarSoma,
+    arrSemRepeticao,
+    produtoAcumulado,
+    letraMaiuscula
 };

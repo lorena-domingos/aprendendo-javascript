@@ -27,3 +27,15 @@ test('O array inverso é [5, 4, 3, 2, 1]', () => {
 test('A soma do array dentro do ojeto é 15', () => {
     expect(exercisesThree.retornarSoma()).toBe(15);
 });
+
+test('O array sem repetição ficaria: [1, 2, 4, 5, 6', () => {
+    expect(exercisesThree.arrSemRepeticao()).toEqual([1, 2, 4, 5, 6]);
+});
+
+test('O produto acumulado do array de 1 até 6 é 21', () => {
+    expect(exercisesThree.produtoAcumulado()).toEqual([1, 2, 3, 4, 5, 21]);
+});
+
+test('Retornando um conjunto de strings em maiúsculas', () => {
+    expect(exercisesThree.letraMaiuscula()).toEqual(['ARROZ', 'BATATA', 'PÃO', 'PYTHON', 'ESTROGÉNIO']);
+});
