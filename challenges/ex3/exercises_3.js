@@ -13,11 +13,12 @@ function mediaArray(arr = [1, 2, 3, 4, 5]) {
 
     for (let i = 0; i < arr.length; i++) {
         resultado += arr[i];
-        media = resultado / arr.length;
     }
 
+    media = resultado / arr.length;
+
     return media;
-}
+};
 
 // mediaArray()
 
@@ -34,7 +35,7 @@ function filtrarPares(intervalo=11) {
         }
     });
     return newArr;
-}
+};
 
 // filtrarPares();
 
