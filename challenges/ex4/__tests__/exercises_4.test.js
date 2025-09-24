@@ -19,3 +19,15 @@ test('A quantidade de palavras é 4', () => {
 test('Palavras com 2 caracteres são BA e RJ', () => {
     expect(exercisesFour.palavrasCurtas(2)).toEqual(['BA', 'RJ']);
 });
+
+test('[1, 2, 3] + [4, 5, 5] = [1, 2, 3, 4, 5, 5]', () => {
+    expect(exercisesFour.concatenarArray()).toEqual([1, 2, 3, 4, 5, 5]);
+});
+
+test('Os valores iguais são arroz e naruto', () => {
+    expect(exercisesFour.intersecaoArray()).toEqual(['arroz', 'naruto']);
+});
+
+test('Remover vogais', () => {
+    expect(exercisesFour.removerVogais()).toBe(" 4 d mnh  c st  dscbrnd cm sr rgx n JS");
+});

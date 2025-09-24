@@ -43,7 +43,7 @@ function contarPalavras() {
     let quantidade = [...arrTexto].length;
 
     return quantidade;
-}
+};
 
 // contarPalavras();
 
@@ -56,13 +56,57 @@ function palavrasCurtas(n) {
     let filtroPalavras = lista.filter(p => p.length === n);
 
     return filtroPalavras;
-}
+};
 
 // palavrasCurtas(2);
 
+// Concatenar 2 arrays? [1, 2 3] + [4] = [1, 2, 3, 4] ?
+// Possível com concat também ou dois for de forma bem manual
+
+function concatenarArray() {
+    const arr = [1, 2, 3];
+    const arr2 = [4, 5, 5];
+
+    let arrayJunto = [...arr, ...arr2]; // Spread 
+
+    return arrayJunto;
+};
+
+// concatenarArray();
+
+// Interseção de arrays
+
+function intersecaoArray() {
+    const a = ["arroz", "batata", "naruto"];
+    const b = ["arroz", "sasuke", "naruto"];
+
+    let filtro = a.filter(p => b.includes(p));
+
+    // console.log(filtro);
+    return filtro;
+};
+
+// intersecaoArray();
+
+// Remover vogais
+
+function removerVogais() {
+    const frase = "É 4 da manhã e cá estou eu descobrindo como usar regex no JS";
+    const regex = /[aeiouáéíóúãõ]/gi;
+
+    return frase.replace(regex, "");
+
+    // console.log(frase.replace(regex, ""));
+};
+
+// removerVogais();
+ 
 module.exports = {
     palindromo,
     maiorPalavra,
     contarPalavras,
-    palavrasCurtas
+    palavrasCurtas,
+    concatenarArray,
+    intersecaoArray,
+    removerVogais
 }
