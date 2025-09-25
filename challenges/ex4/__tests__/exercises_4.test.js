@@ -31,3 +31,15 @@ test('Os valores iguais são arroz e naruto', () => {
 test('Remover vogais', () => {
     expect(exercisesFour.removerVogais()).toBe(" 4 d mnh  c st  dscbrnd cm sr rgx n JS");
 });
+
+test('Retornar apenas nomes', () => {
+    expect(exercisesFour.arrayObjetos()).toEqual(['Ana', 'João']);
+});
+
+test('Ordernar objetos', () => {
+    expect(exercisesFour.ordernarObjetos()).toEqual([ { nome: 'João', idade: 32 }, { nome: 'Ana', idade: 40 } ]);
+});
+
+test('Retornar letras iniciais', () => {
+    expect(exercisesFour.letraInicial()).toEqual(["JP", "M"]);
+});

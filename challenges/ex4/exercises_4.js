@@ -100,6 +100,48 @@ function removerVogais() {
 };
 
 // removerVogais();
+
+// Array de objetos
+
+function arrayObjetos() {
+    const arr1 = [ { nome: "Ana", idade: 25 }, { nome: "João", idade: 32 } ];
+    let novoArray = arr1.map(n => n.nome);
+
+    return novoArray;
+    // console.log(novoArray);
+};
+
+// arrayObjetos();
+
+// ordernar objetos de um array
+
+function ordernarObjetos() {
+    let arr = [ { nome: "Ana", idade: 40 }, { nome: "João", idade: 32 } ];
+    arr.sort((a, b) => a.idade - b.idade);
+
+    return arr;
+};
+
+// ordernarObjetos();
+
+// Pegar somente letra inicial e transoformar em maiúscula
+
+function letraInicial() {
+    const nomes = ["João Pedro", "Maria"];
+    let iniciais = nomes.map(n => {
+    return n.split(" ")
+        .map(p => p[0])
+        .join("")
+    });
+
+    console.log(nomes);
+    console.log(iniciais);    
+
+    return iniciais;
+};
+
+letraInicial();
+
  
 module.exports = {
     palindromo,
@@ -108,5 +150,8 @@ module.exports = {
     palavrasCurtas,
     concatenarArray,
     intersecaoArray,
-    removerVogais
+    removerVogais,
+    arrayObjetos,
+    ordernarObjetos,
+    letraInicial
 }
