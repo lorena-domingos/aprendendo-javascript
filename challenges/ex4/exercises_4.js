@@ -2,7 +2,7 @@
 
 function palindromo(palavra = "arroz") {
     let palavraSeparada = [];
-    let palaravaReversa = "";
+    let palavraReversa = "";
 
     for (p of palavra.toLowerCase()) {
         palavraSeparada.push(p);
@@ -117,9 +117,9 @@ function arrayObjetos() {
 
 function ordernarObjetos() {
     let arr = [ { nome: "Ana", idade: 40 }, { nome: "João", idade: 32 } ];
-    arr.sort((a, b) => a.idade - b.idade);
+    let novoArr = [...arr].sort((a, b) => a.idade - b.idade);
 
-    return arr;
+    return novoArr;
 };
 
 // ordernarObjetos();
@@ -130,17 +130,17 @@ function letraInicial() {
     const nomes = ["João Pedro", "Maria"];
     let iniciais = nomes.map(n => {
     return n.split(" ")
-        .map(p => p[0])
+        .map(p => p[0].toUpperCase())
         .join("")
     });
 
-    console.log(nomes);
-    console.log(iniciais);    
+    // console.log(nomes);
+    // console.log(iniciais);    
 
     return iniciais;
 };
 
-letraInicial();
+// letraInicial();
 
  
 module.exports = {
