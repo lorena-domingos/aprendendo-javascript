@@ -68,10 +68,11 @@ function contarLetras() {
         };
     };
 
+    console.log(obj);
     return obj;
 };
 
-// contarLetras();
+contarLetras();
 
 // Reverter array 
 
