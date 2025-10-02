@@ -78,7 +78,50 @@ function achatarArray(arr = [1, [2, [3, 4]], 5]) {
     // console.log(arr.flat(Infinity));
 };
 
-console.log(achatarArray());
+// console.log(achatarArray());
+
+// busca binária
+
+// Esse código parece magia negra
+
+function buscaBinaria(n) {
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let inicio = 0;
+    let fim = arr.length - 1;
+
+    while (inicio <= fim) {
+        let meio = Math.floor((inicio + fim) / 2); // valor 5
+
+        if (arr[meio] === n) { // se o meio for 5, retorna 5
+            return meio;
+        } else if (arr[meio] < n) { // se n for menor que 5, inicio adiciona o valor do meio + 1 e procura na metade superior?
+            inicio = meio + 1; // 5, 9
+        } else {
+            fim = meio - 1; // procura na metade inferior? 0, 3
+        }
+    }
+
+    return -1;
+
+    // if (n >= 5) {
+    //     for (let i = 0; i < arr.slice(4, 9).length; i++) {
+    //         if (arr.includes(n)) {
+    //             resultado = arr.indexOf(n);
+    //         }
+    //     }
+    // } else if (n <= 5) {
+    //     for (let i = 0; i < arr.slice(0, 4).length; i++) {
+    //         if(arr.includes(n)) {
+    //             resultado = arr.indexOf(n);
+    //         }
+    //     }
+    // }
+
+    // console.log(resultado);
+
+};
+
+console.log(buscaBinaria(5));
 
 module.exports = {
     fatorialRecursivo,
