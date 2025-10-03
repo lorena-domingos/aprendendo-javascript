@@ -121,7 +121,48 @@ function buscaBinaria(n) {
 
 };
 
-console.log(buscaBinaria(5));
+// console.log(buscaBinaria(5));
+
+// Anagrama
+
+function anagrama() {
+    let a = "amor";
+    let b = "roma";
+
+    let arr = a.split('').sort().join('');
+    let segundoArr = b.split('').sort().join('');
+
+    if (arr === segundoArr) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(anagrama());
+
+// parênteses
+
+function parenteses() {
+    const texto = "((())";
+    let contador = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        if (texto[i] === "(") {
+            contador += 1;
+        } else if (texto[i] === ")") {
+            contador -= 1;
+        }
+
+        if (contador < 0) {
+        return false;
+        }
+    }
+
+    return contador === 0;
+};
+
+console.log(parenteses());
 
 module.exports = {
     fatorialRecursivo,
