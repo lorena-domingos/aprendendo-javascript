@@ -19,8 +19,24 @@ function fibonacciRecursivo(n) {
         return 1;
     };
     
-    return fibonacciRecursivo(n - 1) + fibonacciRecursivo (n -2);
+    return fibonacciRecursivo(n - 1) + fibonacciRecursivo (n - 2);
 };
+
+console.log(fibonacciRecursivo(2))
+
+// fibo iterativo
+
+function fibo(n) {
+    let arr = [0, 1];
+
+    for (let i = 2; i < n; i++) {
+        arr.push(arr[i - 1] + arr[i - 2]);
+    };
+
+    return arr[n - 1];
+};
+
+console.log(fibo(2));
 
 // Ocorrência de valores
 
@@ -162,7 +178,7 @@ function parenteses() {
     return contador === 0;
 };
 
-console.log(parenteses());
+// console.log(parenteses());
 
 module.exports = {
     fatorialRecursivo,

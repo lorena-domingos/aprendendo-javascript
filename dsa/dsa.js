@@ -1,39 +1,104 @@
 // Stack
 
-// LIFO (Last-In, First-Out) DS
+// LIFO (Last-In, First-Out)
 
-function pilhaAlg(n) {
-    let stack = [];
+function pilhaLinda(n) {
+    class Stack {
+        constructor() {
+            this.items = [];
+        }
 
+        peek() {
+            return this.items[this.items.length - 1];
+        }
+
+        push(e) {
+            return this.items.push(e);
+        }
+
+        pop() {
+            return this.items.pop();
+        }
+
+        print() {
+            const listaArrumada = this.items.join(' - ');
+            return console.log(`Itens na pilha: ${listaArrumada}`);
+        }
+
+        isEmpty() {
+            return this.items.length === 0 ? true : false;
+        }
+
+        size() {
+            return this.items.length;
+        }
+    };
+
+    const stack = new Stack();
+    
     for (let i = 1; i <= n; i++) {
         stack.push(i);
     };
 
-    let novoNumero = stack[stack.length - 1];
-    // let numeroDaSorte = stack.pop(); //
+    console.log(`Item removido: ${stack.pop()}`);
+    stack.print(stack);
+    console.log(`A pilha está vazia? ${stack.isEmpty()}`);
+    console.log(`O topo da pilha é ${stack.peek()}`);
+    console.log(`A quantidade de itens na pilha é ${stack.size()}`);
 
-    console.log(stack.indexOf(2));
-
-    console.log(novoNumero);
-    // console.log(numeroDaSorte);
-    console.log(stack);
+    return stack;
 };
 
-// pilhaAlg(5);
+// pilhaLinda(5);
 
 // Queue
 
 // FIFO (First-in First-out)
 
 function queue() {
-    let list = [];
+    class Queue {
+        constructor() {
+            this.items = [];
+        }
 
-    list.push("Arroz");
-    list.push("Batata");
-    list.push("Cenoura");
-    list.shift();
+        enqueue(e) {
+            return this.items.push(e);
+        }
 
-    console.log(list);
+        dequeue() {
+            return this.items.shift();
+        }
+
+        front() {
+            return this.items[0];
+        }
+
+        isEmpty() {
+            return this.items.length === 0 ? true : false;
+        }
+
+        size() {
+            return this.items.length;
+        }
+
+        print() {
+            const filaOrganizada = this.items.join(' => ')
+            return console.log(`Fila: ${filaOrganizada}` );
+        }
+    }
+
+    const queue = new Queue();
+
+    console.log("=== FILA do SUS ===");
+    queue.enqueue("Pedrinho da Motoca");
+    queue.enqueue("Maria do Cebolão");
+    queue.enqueue("Mario sem Armário");
+    queue.print();
+
+    console.log(`${queue.dequeue()} foi atendido.`);
+    queue.print();
+
+    return queue;
 };
 
 queue();
