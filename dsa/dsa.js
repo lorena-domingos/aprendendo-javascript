@@ -101,5 +101,54 @@ function queue() {
     return queue;
 };
 
-queue();
+// queue();
 
+// Bublle Sort
+
+function bubbleSort() {
+    let arr = [5, 3, 6, 2, 1];
+
+    for (let pass = 0; pass < arr.length - 1; pass++) {
+
+        for (let i = 0; i < arr.length - 1 - pass; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        };
+    }
+    
+    
+    console.log(arr);
+};
+
+// bubbleSort(); // Estudar pra entender melhor
+
+
+function selectionSort() {
+    let arr = [64, 25, 12, 22, 11];
+    
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+
+        for (let j = i + 1; j < arr.length; j++) {
+
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+
+        }
+
+        if (minIndex !== i) {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+
+    }
+
+    console.log(arr);
+}
+
+selectionSort(); // Copiando a versão feita em C da Wikipedia

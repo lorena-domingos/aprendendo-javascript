@@ -14,10 +14,13 @@ function calcularDiagonal() {
     // for (let j = 2; j > -1; j--) {
     //     listaDois.push(arr[j][j]);
     // }
+    function diferenca(lista) {
+        return lista.reduce((ac, cv) => ac + cv, 0);
+    }
 
-    let diferenca = listaUm.reduce((ac, cv) => ac + cv, 0) - listaDois.reduce((ac, cv) => ac + cv, 0);
+    let valorDiferente = diferenca(listaUm) - diferenca(listaDois);
 
-    console.log(diferenca);
+    console.log(valorDiferente);
     console.log(listaUm);
     console.log(listaDois);
 };
